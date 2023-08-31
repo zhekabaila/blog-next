@@ -3,8 +3,12 @@ export interface User {
   username: string
   email: string
   password: string
-  gender: string
   role: string
+  gender?: string | null
+  dateOfBirth?: Date | null
+  bio?: string | null
+  address?: string | null
+  country?: string | null
   article?: Article[]
 }
 

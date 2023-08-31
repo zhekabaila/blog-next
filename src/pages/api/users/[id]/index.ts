@@ -1,4 +1,5 @@
-import { PrismaClient, User } from '@prisma/client'
+import { User } from '@/types/app'
+import { PrismaClient } from '@prisma/client'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export type ResponseData = {
@@ -6,7 +7,7 @@ export type ResponseData = {
   ok: boolean
   statusText: string
   message: string | any
-  data?: User[] | User
+  data?: any
 }
 
 export default function handler(

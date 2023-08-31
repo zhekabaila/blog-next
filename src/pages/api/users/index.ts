@@ -1,5 +1,4 @@
-import { User } from '@/types/app'
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, User } from '@prisma/client'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export type ResponseData = {
