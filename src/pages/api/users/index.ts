@@ -38,7 +38,7 @@ export default async function handler(
           },
           include: {
             articles: true,
-            comments: true,
+            // comments: true,
           },
         })
         .then((response) => {
