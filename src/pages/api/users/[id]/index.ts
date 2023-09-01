@@ -6,7 +6,7 @@ export type ResponseData = {
   ok: boolean
   statusText: string
   message: string | any
-  data?: User[] | User | any
+  data?: User[] | User
 }
 
 export default async function handler(
@@ -15,15 +15,11 @@ export default async function handler(
 ) {
   const prisma = new PrismaClient()
 
-  const userId = req.query.id
+  // const userId = req.query.id
 
   switch (req.method) {
     case 'GET':
-      const user = await prisma.user.findUnique({
-        where: {
-          id: userId?.toString(),
-        },
-      })
+      const user = await prisma.user.findMany()
       res.status(200).json({
         data: user,
         status: 200,
