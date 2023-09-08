@@ -32,13 +32,10 @@ export default async function handler(
         .findMany({
           where: {
             ...userQuery,
-            articles: {
-              some: {},
-            },
           },
           include: {
             articles: true,
-            // comments: true,
+            comments: true,
           },
         })
         .then((response) => {
